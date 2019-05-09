@@ -39,6 +39,7 @@
 				<tr>
 					<th>@lang($lang.'table.id')</th>
 					<th>@lang($lang.'table.name')</th>
+					<th>@lang($lang.'table.nid')</th>
 					<th>@lang($lang.'table.contact')</th>
 					<th>@lang($lang.'table.info')</th>
 					<th>@lang($lang.'table.description')</th>
