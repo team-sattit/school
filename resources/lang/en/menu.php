@@ -30,6 +30,9 @@ return [
 		'caste' => 'Caste',
 		'blood_group' => 'Blood Group',
 		'category' => 'Category',
+		'academic_session'=>'Academic Session',
+		'student'=>'Student',
 	],
 	'employee' => 'Employee',
+	'Student'=>'Student',
 ];

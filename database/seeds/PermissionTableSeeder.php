@@ -125,6 +125,13 @@ class PermissionTableSeeder extends Seeder {
 		//Setup Employee Category Permission
 		Permission::create(['guard_name' => 'web', 'name' => 'access-all-employee']);
 		Permission::create(['guard_name' => 'web', 'name' => 'access-subordinate-employee']);
+		//Student academic session permission
+
+		Permission::create(['guard_name' => 'web', 'name' => 'view-academic_session']);
+		Permission::create(['guard_name' => 'web', 'name' => 'create-academic_session']);
+		Permission::create(['guard_name' => 'web', 'name' => 'update-academic_session']);
+		Permission::create(['guard_name' => 'web', 'name' => 'delete-academic_session']);
+		Permission::create(['guard_name' => 'web', 'name' => 'change-status-academic_session']);
 
 	}
 }
