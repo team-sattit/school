@@ -11,6 +11,7 @@ use App\Model\Setup\Misc\Caste;
 use App\Model\Setup\Misc\Category;
 use App\Model\Setup\Misc\Nationality;
 use App\Model\Setup\Misc\Religion;
+use App\Model\Setup\Student\AcademicSession;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -66,5 +67,7 @@ class SystemSeeder extends Seeder {
 		Category::create(['name' => 'Employee Category']);
 		EmployeeDocumentType::create(['name' => 'Document 01']);
 		Bank::create(['name' => 'Sonali Bank']);
+		AcademicSession::create(['name' => '2019-20','start_date'=>'2019-01-01','end_date'=>'2019-05-05']);
+
 	}
 }
