@@ -433,4 +433,30 @@ return [
 			'not_find' => 'Bank Could Not Find',
 		],
 	],
+
+		'student' => [
+		'academic_session' => [
+			'title' => 'Academic Session Setup',
+			'create' => 'New Academic Session',
+			'update' => 'Update Academic Session',
+			'table' => [
+				'id' => '#',
+				'name' => 'Name',
+				'description' => 'Description',
+				'status' => 'Status',
+				'action' => 'Action',
+			],
+			'form' => [
+				'name_label' => 'Academic Session Name',
+				'name' => 'Enter Academic Session Name',
+				'description_label' => 'Description',
+				'description' => 'Enter Description',
+			],
+			'added' => 'Academic Session Added Successfully',
+			'updated' => 'Academic Session Updated Successfully',
+			'deleted' => 'Academic Session Deleted Successfully',
+			'status_change' => 'Academic Session Status Changed Successfully',
+			'not_find' => 'Academic Session Could Not Find',
+		],
+	],
 ];

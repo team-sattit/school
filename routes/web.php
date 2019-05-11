@@ -161,6 +161,16 @@ Route::post('/permission/module', 'PermissionController@assignModulePermission')
 			Route::put('/bank/{bank}/status', 'BankController@status')->name('setup.finance.bank.status');
 			Route::get('datatable/bank', 'BankController@datatable')->name('setup.finance.bank.datatable');
 		});
+
+
+		Route::group(['prefix' => 'student', 'namespace' => 'Student'], function () {
+			//Nationality Routes
+			Route::resource('academic-session', 'AcademicSessionController', [
+				'as' => 'setup.student',
+			]);
+			Route::put('/academic-session/{academic-session}/status', 'AcademicSessionController@status')->name('setup.student.academic-session.status');
+			Route::get('datatable/academic-session', 'AcademicSessionController@datatable')->name('setup.student.academic-session.datatable');
+		});
 		//Branch Routes
 		Route::resource('branch', 'BranchController', [
 			'as' => 'setup',
