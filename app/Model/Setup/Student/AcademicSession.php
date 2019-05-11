@@ -16,5 +16,6 @@ class AcademicSession extends Model
 	protected static $logFillable = true;
 	protected static $logOnlyDirty = true;
 	protected static $ignoreChangedAttributes = ['updated_at'];
+	protected $dates = ['start_date', 'end_date'];
 
 }

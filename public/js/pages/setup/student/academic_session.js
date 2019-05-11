@@ -66,7 +66,16 @@ var DatatableButtonsHtml5 = function() {
             }, {
                 data: 'name',
                 name: 'name'
-            }, {
+            },
+             {
+                data: 'start_date',
+                name: 'start_date'
+            },
+             {
+                data: 'end_date',
+                name: 'end_date'
+            },
+             {
                 data: 'description',
                 name: 'description'
             },{

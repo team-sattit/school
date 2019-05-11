@@ -35,6 +35,10 @@ class AcademicSessionRepository {
 			return '<strong>' . $model->name . '</strong>';
 		})->editColumn('description', function ($model) {
 			return $model->description;
+		})->editColumn('start_date', function ($model) {
+			return $model->start_date->format('M d, Y');
+		})->editColumn('end_date', function ($model) {
+			return $model->end_date->format('M d, Y');
 		})->addColumn('status', function ($model) {
 			return view('admin.setup.status', compact('model'));
 		})->addColumn('action', function ($model) {
@@ -182,6 +186,9 @@ class AcademicSessionRepository {
 		$formatted = [
 			'name' => gv($params, 'name'),
 			'description' => gv($params, 'description'),
+			'start_date' => gv($params, 'start_date'),
+			'end_date' => gv($params, 'end_date'),
+
 			'status' => gbv($params, 'status'),
 		];
 		$formatted['options'] = [];
