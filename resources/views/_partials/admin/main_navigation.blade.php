@@ -86,6 +86,18 @@
 			</ul>
 		</li>
 		@endif
+		@if( auth()->user()->can('view-academic_session') or auth()->user()->can('create-academic_session') )
+		<li class="nav-item nav-item-submenu{{Request::segment($index + 1) == 'student' ? ' nav-item-expanded nav-item-open' : ''}}">
+			<a href="#" class="nav-link"><i class="icon-equalizer2"></i> <span>@lang('menu.setup.student')</span></a>
+			<ul class="nav nav-group-sub" data-submenu-title="@lang('menu.setup.student')">
+				@if(auth()->user()->can('view-academic_session') or auth()->user()->can('create-academic_session'))
+				<li class="nav-item"><a href="{{route('setup.student.academic-session.index')}}" class="nav-link{{ Request::is('setup/student/academic-session') ? ' active' : '' }}"><i class="icon-stack-plus"></i> <span>@lang('menu.setup.academic_session')</span></a></li>
+				@endif
+		
+			</ul>
+		</li>
+		@endif
+
 		@else
 			<!-- Main -->
 		<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">@lang('main')</div> <i class="icon-menu" title="@lang('main')"></i></li>
