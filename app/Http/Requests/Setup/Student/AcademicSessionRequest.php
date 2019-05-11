@@ -31,10 +31,16 @@ class AcademicSessionRequest extends FormRequest {
 		return [
 			'name' => [
 				'required', 'string', 'max:191',
-				Rule::unique('banks')->ignore($this->bank),
+				Rule::unique('academic_sessions')->ignore($this->academic_session),
 			],
 			'description' => [
 				'sometimes', 'nullable', 'string', 'max:500',
+			],
+			'start_date' => [
+				'required', 'date'
+			],
+			'end_date' => [
+				'required', 'date','after:start_date'
 			],
 		];
 	}
@@ -48,6 +54,8 @@ class AcademicSessionRequest extends FormRequest {
 		return [
 			'name' => trans('setup.student.academic_session.form.name_label'),
 			'description' => trans('setup.student.academic_session.form.description_label'),
+			'start_date' => trans('setup.student.academic_session.form.start_date_label'),
+			'end_date' => trans('setup.student.academic_session.form.end_date_label'),
 		];
 	}
 

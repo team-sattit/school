@@ -16,6 +16,8 @@ class CreateAcademicSessionsTable extends Migration
         Schema::create('academic_sessions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 191)->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->Text('description')->nullable();
             $table->boolean('status', 1)->default(1);
             $table->text('options')->nullable();

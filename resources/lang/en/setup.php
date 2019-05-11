@@ -442,6 +442,9 @@ return [
 			'table' => [
 				'id' => '#',
 				'name' => 'Name',
+				'start_date'=>'Start Date',
+				'end_date'=>'End Date',
+
 				'description' => 'Description',
 				'status' => 'Status',
 				'action' => 'Action',
@@ -451,6 +454,10 @@ return [
 				'name' => 'Enter Academic Session Name',
 				'description_label' => 'Description',
 				'description' => 'Enter Description',
+				'start_date_label' => 'Start Date',
+				'start_date' => 'Enter Start Date',
+				'end_date_label' => 'End Date',
+				'end_date' => 'Enter End Date',
 			],
 			'added' => 'Academic Session Added Successfully',
 			'updated' => 'Academic Session Updated Successfully',

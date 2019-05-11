@@ -40,6 +40,9 @@
 				<tr>
 					<th>@lang($lang.'table.id')</th>
 					<th>@lang($lang.'table.name')</th>
+					<th>@lang($lang.'table.start_date')</th>
+					<th>@lang($lang.'table.end_date')</th>
+
 					<th>@lang($lang.'table.description')</th>
 					<th>@lang($lang.'table.status')</th>
 					<th>@lang($lang.'table.action')</th>
