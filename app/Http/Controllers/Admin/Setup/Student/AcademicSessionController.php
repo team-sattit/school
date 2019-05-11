@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Admin\Setup\Student;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Setup\Student\AcademicSessionRequest;
 use App\Model\Setup\Student\AcademicSession;
 use App\Repositories\Setup\Student\AcademicSessionRepository;
-use App\Http\Requests\Setup\Student\AcademicSessionRequest;
+use Illuminate\Http\Request;
 
-class AcademicSessionController extends Controller
-{
-  
+class AcademicSessionController extends Controller {
+
 	protected $request;
 	protected $model;
 	protected $repo;
