@@ -465,5 +465,31 @@ return [
 			'status_change' => 'Academic Session Status Changed Successfully',
 			'not_find' => 'Academic Session Could Not Find',
 		],
+
+			'class' => [
+			'title' => 'Class Setup',
+			'create' => 'New Class',
+			'update' => 'Update Class',
+			'table' => [
+				'id' => '#',
+				'name' => 'Name',
+				
+
+				'description' => 'Description',
+				'status' => 'Status',
+				'action' => 'Action',
+			],
+			'form' => [
+				'name_label' => 'Class Name',
+				'name' => 'Enter Class Name',
+				'description_label' => 'Description',
+				'description' => 'Enter Description',
+			],
+			'added' => 'Class Added Successfully',
+			'updated' => 'Class Updated Successfully',
+			'deleted' => 'Class Deleted Successfully',
+			'status_change' => 'Class Status Changed Successfully',
+			'not_find' => 'Class Could Not Find',
+		],
 	],
 ];
