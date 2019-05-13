@@ -139,5 +139,11 @@ class PermissionTableSeeder extends Seeder {
 		Permission::create(['guard_name' => 'web', 'name' => 'delete-class']);
 		Permission::create(['guard_name' => 'web', 'name' => 'change-status-class']);
 
+		Permission::create(['guard_name' => 'web', 'name' => 'view-subject']);
+		Permission::create(['guard_name' => 'web', 'name' => 'create-subject']);
+		Permission::create(['guard_name' => 'web', 'name' => 'update-subject']);
+		Permission::create(['guard_name' => 'web', 'name' => 'delete-subject']);
+		Permission::create(['guard_name' => 'web', 'name' => 'change-status-subject']);
+
 	}
 }
