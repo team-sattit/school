@@ -97,6 +97,10 @@
 				@if(auth()->user()->can('view-class') or auth()->user()->can('create-class'))
 				<li class="nav-item"><a href="{{route('setup.student.class.index')}}" class="nav-link{{ Request::is('setup/student/class') ? ' active' : '' }}"><i class="icon-stack-plus"></i> <span>@lang('menu.setup.class')</span></a></li>
 				@endif
+
+			  @if(auth()->user()->can('view-subject') or auth()->user()->can('create-subject'))
+				<li class="nav-item"><a href="{{route('setup.student.subject.index')}}" class="nav-link{{ Request::is('setup/student/subject') ? ' active' : '' }}"><i class="icon-stack-plus"></i> <span>@lang('menu.setup.subject')</span></a></li>
+				@endif
 		
 			</ul>
 		</li>

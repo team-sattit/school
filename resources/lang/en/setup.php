@@ -491,5 +491,32 @@ return [
 			'status_change' => 'Class Status Changed Successfully',
 			'not_find' => 'Class Could Not Find',
 		],
+
+
+			'subject' => [
+			'title' => 'Subject Setup',
+			'create' => 'New Subject',
+			'update' => 'Update Subject',
+			'table' => [
+				'id' => '#',
+				'name' => 'Name',
+				
+
+				'description' => 'Description',
+				'status' => 'Status',
+				'action' => 'Action',
+			],
+			'form' => [
+				'name_label' => 'Subject Name',
+				'name' => 'Enter Subject Name',
+				'description_label' => 'Description',
+				'description' => 'Enter Description',
+			],
+			'added' => 'Subject Added Successfully',
+			'updated' => 'Subject Updated Successfully',
+			'deleted' => 'Subject Deleted Successfully',
+			'status_change' => 'Subject Status Changed Successfully',
+			'not_find' => 'Subject Could Not Find',
+		],
 	],
 ];

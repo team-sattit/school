@@ -175,6 +175,18 @@ Route::post('/permission/module', 'PermissionController@assignModulePermission')
 			]);
 			Route::put('/class/{class}/status', 'ClassController@status')->name('setup.student.class.status');
 			Route::get('datatable/aclass', 'ClassController@datatable')->name('setup.student.class.datatable');
+
+			Route::resource('subject', 'SubjectController', [
+				'as' => 'setup.student',
+			]);
+			Route::put('/subject/{subject}/status', 'SubjectController@status')->name('setup.student.subject.status');
+			Route::get('datatable/subject', 'SubjectController@datatable')->name('setup.student.subject.datatable');
+
+			Route::resource('subjectassaign', 'SubjectAssaignController', [
+				'as' => 'setup.subjectassaign',
+			]);
+			Route::put('/subjectassaign/{subjectassaign}/status', 'SubjectAssaignController@status')->name('setup.student.subjectassaign.status');
+			Route::get('datatable/subjectassaign', 'SubjectAssaignController@datatable')->name('setup.student.subjectassaign.datatable');
 		});
 		//Branch Routes
 		Route::resource('branch', 'BranchController', [
