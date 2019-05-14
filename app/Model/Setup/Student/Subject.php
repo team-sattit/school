@@ -4,18 +4,16 @@ namespace App\Model\Setup\Student;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
-class AcademicSession extends Model
+class Subject extends Model
 {
-    	use LogsActivity;
+       use LogsActivity;
 
-	protected $fillable = ['name', 'description', 'status', 'options','start_date', 'end_date'];
+	protected $fillable = ['name', 'description', 'status', 'options'];
 	protected $casts = ['options' => 'array'];
-	protected $table = 'academic_sessions';
+	protected $table = 'subjects';
 	protected $primaryKey = 'id';
-	protected static $logName = 'setup_academic_sessions';
+	protected static $logName = 'setup_subject';
 	protected static $logFillable = true;
 	protected static $logOnlyDirty = true;
 	protected static $ignoreChangedAttributes = ['updated_at'];
-	protected $dates = ['start_date', 'end_date'];
-
 }

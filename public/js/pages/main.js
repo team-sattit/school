@@ -282,6 +282,7 @@ var _componentDatePicker = function() {
                      _componentSwitchery();
                      _componentUniform();
                      _componentValidation();
+                     _componentDatePicker();
                  })
                  .fail(function(data) {
                      console.log(data);

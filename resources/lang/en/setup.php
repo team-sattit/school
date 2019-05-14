@@ -442,6 +442,9 @@ return [
 			'table' => [
 				'id' => '#',
 				'name' => 'Name',
+				'start_date'=>'Start Date',
+				'end_date'=>'End Date',
+
 				'description' => 'Description',
 				'status' => 'Status',
 				'action' => 'Action',
@@ -451,12 +454,69 @@ return [
 				'name' => 'Enter Academic Session Name',
 				'description_label' => 'Description',
 				'description' => 'Enter Description',
+				'start_date_label' => 'Start Date',
+				'start_date' => 'Enter Start Date',
+				'end_date_label' => 'End Date',
+				'end_date' => 'Enter End Date',
 			],
 			'added' => 'Academic Session Added Successfully',
 			'updated' => 'Academic Session Updated Successfully',
 			'deleted' => 'Academic Session Deleted Successfully',
 			'status_change' => 'Academic Session Status Changed Successfully',
 			'not_find' => 'Academic Session Could Not Find',
+		],
+
+			'class' => [
+			'title' => 'Class Setup',
+			'create' => 'New Class',
+			'update' => 'Update Class',
+			'table' => [
+				'id' => '#',
+				'name' => 'Name',
+				
+
+				'description' => 'Description',
+				'status' => 'Status',
+				'action' => 'Action',
+			],
+			'form' => [
+				'name_label' => 'Class Name',
+				'name' => 'Enter Class Name',
+				'description_label' => 'Description',
+				'description' => 'Enter Description',
+			],
+			'added' => 'Class Added Successfully',
+			'updated' => 'Class Updated Successfully',
+			'deleted' => 'Class Deleted Successfully',
+			'status_change' => 'Class Status Changed Successfully',
+			'not_find' => 'Class Could Not Find',
+		],
+
+
+			'subject' => [
+			'title' => 'Subject Setup',
+			'create' => 'New Subject',
+			'update' => 'Update Subject',
+			'table' => [
+				'id' => '#',
+				'name' => 'Name',
+				
+
+				'description' => 'Description',
+				'status' => 'Status',
+				'action' => 'Action',
+			],
+			'form' => [
+				'name_label' => 'Subject Name',
+				'name' => 'Enter Subject Name',
+				'description_label' => 'Description',
+				'description' => 'Enter Description',
+			],
+			'added' => 'Subject Added Successfully',
+			'updated' => 'Subject Updated Successfully',
+			'deleted' => 'Subject Deleted Successfully',
+			'status_change' => 'Subject Status Changed Successfully',
+			'not_find' => 'Subject Could Not Find',
 		],
 	],
 ];

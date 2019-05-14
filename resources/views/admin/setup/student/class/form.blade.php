@@ -1,6 +1,6 @@
 @php
-	$route = 'setup.student.academic-session.';
-    $lang = 'setup.student.academic_session.';
+	$route = 'setup.student.class.';
+    $lang = 'setup.student.class.';
 @endphp
 @if(isset($model))
 {!! Form::model($model, ['route' => [$route.'update', $model->id], 'class' => 'form-validate-jquery', 'id' => 'content_form', 'method' => 'put']) !!}
@@ -15,19 +15,7 @@
             {{ Form::text('name', Null, ['class' => 'form-control', 'placeholder' =>  __($lang.'form.name'), 'required' => '']) }}
         </div>
     </div>
-    <div class="form-group row">
-        {{ Form::label('start_date', __($lang.'form.start_date_label') , ['class' => 'col-form-label col-lg-4 text-right']) }}
-        <div class="col-lg-6">
-            {{ Form::text('start_date', Null, ['class' => 'form-control date', 'placeholder' =>  __($lang.'form.start_date')]) }}
-        </div>
-    </div>
 
-        <div class="form-group row">
-        {{ Form::label('end_date', __($lang.'form.end_date_label') , ['class' => 'col-form-label col-lg-4 text-right']) }}
-        <div class="col-lg-6">
-            {{ Form::text('end_date', Null, ['class' => 'form-control date', 'placeholder' =>  __($lang.'form.end_date')]) }}
-        </div>
-    </div>
 
         <div class="form-group row">
         {{ Form::label('description', __($lang.'form.description_label') , ['class' => 'col-form-label col-lg-4 text-right']) }}

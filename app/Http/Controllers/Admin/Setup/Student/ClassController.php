@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin\Setup\Student;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Setup\Student\AcademicSessionRequest;
-use App\Model\Setup\Student\AcademicSession;
-use App\Repositories\Setup\Student\AcademicSessionRepository;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Model\Setup\Student\AcademicClass;
+use App\Repositories\Setup\Student\ClassRepository;
+use App\Http\Requests\Setup\Student\ClassRequest;
 
-class AcademicSessionController extends Controller {
-
+class ClassController extends Controller
+{
+  
 	protected $request;
 	protected $model;
 	protected $repo;
@@ -17,14 +18,14 @@ class AcademicSessionController extends Controller {
 	protected $lang;
 	public function __construct(
 		Request $request,
-		AcademicSession $model,
-		AcademicSessionRepository $repo
+		AcademicClass $model,
+		ClassRepository $repo
 	) {
 		$this->request = $request;
 		$this->model = $model;
 		$this->repo = $repo;
-		$this->view = 'admin.setup.student.academic_session.';
-		$this->lang = 'setup.student.academic_session.';
+		$this->view = 'admin.setup.student.class.';
+		$this->lang = 'setup.student.class.';
 	}
 	/**
 	 * Display a listing of the resource.
@@ -69,7 +70,7 @@ class AcademicSessionController extends Controller {
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(AcademicSessionRequest $request) {
+	public function store(ClassRequest $request) {
 		$this->authorize('create', $this->repo->model());
 		if ($this->request->ajax()) {
 			$naionality = $this->repo->create($this->request->all());
@@ -113,7 +114,7 @@ class AcademicSessionController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(AcademicSessionRequest $request, $id) {
+	public function update(ClassRequest $request, $id) {
 		$this->authorize('update', $this->repo->model());
 		if ($this->request->ajax()) {
 			$nationality = $this->repo->findOrFail($id);

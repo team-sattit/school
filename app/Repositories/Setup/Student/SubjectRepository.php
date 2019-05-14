@@ -1,12 +1,12 @@
 <?php
 namespace App\Repositories\Setup\Student;
 
-use App\Model\Setup\Student\AcademicSession;
+use App\Model\Setup\Student\Subject;
 use Illuminate\Validation\ValidationException;
 use Yajra\Datatables\Datatables;
 
-class AcademicSessionRepository {
-	protected $academic_session;
+class SubjectRepository {
+	protected $subject;
 
 	/**
 	 * Instantiate a new instance.
@@ -14,18 +14,18 @@ class AcademicSessionRepository {
 	 * @return void
 	 */
 	public function __construct(
-		AcademicSession $academic_session
+		Subject $subject
 	) {
-		$this->academic_session = $academic_session;
+		$this->subject = $subject;
 	}
 	public function model() {
-		return AcademicSession::class;
+		return Subject::class;
 	}
 	private function route() {
-		return 'setup.student.academic-session.';
+		return 'setup.student.subject.';
 	}
 	private function permission() {
-		return '-academic_session';
+		return '-subject';
 	}
 
 	public function datatable() {
@@ -35,10 +35,6 @@ class AcademicSessionRepository {
 			return '<strong>' . $model->name . '</strong>';
 		})->editColumn('description', function ($model) {
 			return $model->description;
-		})->editColumn('start_date', function ($model) {
-			return $model->start_date->format('M d, Y');
-		})->editColumn('end_date', function ($model) {
-			return $model->end_date->format('M d, Y');
 		})->addColumn('status', function ($model) {
 			return view('admin.setup.status', compact('model'));
 		})->addColumn('action', function ($model) {
@@ -52,95 +48,95 @@ class AcademicSessionRepository {
 	/**
 	 * Get bank query
 	 *
-	 * @return AcademicSession query
+	 * @return subject query
 	 */
 	public function getQuery() {
-		return $this->academic_session;
+		return $this->subject;
 	}
 
 	/**
-	 * Count AcademicSession
+	 * Count subject
 	 *
 	 * @return integer
 	 */
 	public function count() {
-		return $this->academic_session->count();
+		return $this->subject->count();
 	}
 
 	/**
-	 * List all AcademicSession by name & id
+	 * List all subject by name & id
 	 *
 	 * @return array
 	 */
 	public function listAll() {
-		return $this->academic_session->where('status', 1)->pluck('name', 'id')->prepend(trans('select.academic_session'), '');
+		return $this->subject->where('status', 1)->pluck('name', 'id')->prepend(trans('select.subject'), '');
 	}
 
 	/**
-	 * List all AcademicSession by name & id for select option
+	 * List all subject by name & id for select option
 	 *
 	 * @return array
 	 */
 
 	public function selectAll() {
-		return $this->academic_session->all(['name', 'id']);
+		return $this->subject->all(['name', 'id']);
 	}
 
 	/**
-	 * List all AcademicSession by id
+	 * List all subject by id
 	 *
 	 * @return array
 	 */
 	public function listId() {
-		return $this->academic_session->all()->pluck('id')->all();
+		return $this->subject->all()->pluck('id')->all();
 	}
 
 	/**
-	 * Get all AcademicSession
+	 * Get all subject
 	 *
 	 * @return array
 	 */
 	public function getAll() {
-		return $this->academic_session->all();
+		return $this->subject->all();
 	}
 
 	/**
-	 * Find academic_session with given id.
+	 * Find subject with given id.
 	 *
 	 * @param integer $id
-	 * @return AcademicSession
+	 * @return subject
 	 */
 	public function find($id) {
-		return $this->academic_session->find($id);
+		return $this->subject->find($id);
 	}
 
 	/**
-	 * Find academic_session with given id or throw an error.
+	 * Find subject with given id or throw an error.
 	 *
 	 * @param integer $id
-	 * @return AcademicSession
+	 * @return subject
 	 */
 	public function findOrFail($id) {
-		$academic_session = $this->academic_session->find($id);
+		$subject = $this->subject->find($id);
 
-		if (!$academic_session) {
-			throw ValidationException::withMessages(['message' => trans('misc.could_not_find_academic_session')]);
+		if (!$subject) {
+			throw ValidationException::withMessages(['message' => trans('misc.could_not_find_subject')]);
 		}
 
-		return $academic_session;
+		return $subject;
 	}
 
 	/**
 	 * Get all filtered data
 	 *
 	 * @param array $params
-	 * @return AcademicSession
+	 * @return subject
 	 */
 	public function getData($params) {
 		$sort_by = gv($params, 'sort_by', 'name');
 		$order = gv($params, 'order', 'asc');
 
-		return $this->academic_session->orderBy($sort_by, $order);
+		return $this->subject->orderBy($sort_by, $order);
 	}
 
 	/**
@@ -159,7 +155,7 @@ class AcademicSessionRepository {
 	 * Get all filtered data for printing
 	 *
 	 * @param array $params
-	 * @return AcademicSession
+	 * @return subject
 	 */
 	public function print($params) {
 		return $this->getData($params)->get();
@@ -169,10 +165,10 @@ class AcademicSessionRepository {
 	 * Create a new bank.
 	 *
 	 * @param array $params
-	 * @return AcademicSession
+	 * @return subject
 	 */
 	public function create($params) {
-		return $this->academic_session->forceCreate($this->formatParams($params));
+		return $this->subject->forceCreate($this->formatParams($params));
 	}
 
 	/**
@@ -186,8 +182,6 @@ class AcademicSessionRepository {
 		$formatted = [
 			'name' => gv($params, 'name'),
 			'description' => gv($params, 'description'),
-			'start_date' => gv($params, 'start_date'),
-			'end_date' => gv($params, 'end_date'),
 
 			'status' => gbv($params, 'status'),
 		];
@@ -196,25 +190,25 @@ class AcademicSessionRepository {
 	}
 
 	/**
-	 * Update given academic_session.
+	 * Update given subject.
 	 *
-	 * @param AcademicSession $academic_session
+	 * @param subject $subject
 	 * @param array $params
 	 *
-	 * @return AcademicSession
+	 * @return subject
 	 */
-	public function update(AcademicSession $academic_session, $params) {
-		return $academic_session->forceFill($this->formatParams($params, $academic_session->id))->save();
+	public function update(Subject $subject, $params) {
+		return $subject->forceFill($this->formatParams($params, $subject->id))->save();
 	}
 
 	/**
-	 * Delete AcademicSession.
+	 * Delete Class.
 	 *
 	 * @param integer $id
 	 * @return bool|null
 	 */
-	public function delete(AcademicSession $academic_session) {
-		return $academic_session->delete();
+	public function delete(Subject $subject) {
+		return $subject->delete();
 	}
 
 	/**
@@ -224,7 +218,7 @@ class AcademicSessionRepository {
 	 * @return bool|null
 	 */
 	public function deleteMultiple($ids) {
-		return $this->academic_session->whereIn('id', $ids)->delete();
+		return $this->subject->whereIn('id', $ids)->delete();
 	}
 	public function updateStatus($id) {
 		$model = $this->findOrFail($id);

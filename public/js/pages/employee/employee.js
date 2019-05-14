@@ -50,25 +50,31 @@ var DatatableButtonsHtml5 = function() {
             serverSide: true,
             ajax: $('.content_managment_table').data('url'),
             columns: [{
-                data: 'DT_RowIndex',
-                name: 'DT_RowIndex'
-            }, {
-                data: 'type',
-                name: 'type'
+                data: 'code',
+                name: 'code'
             },{
                 data: 'name',
                 name: 'name'
-            }, {
-                data: 'alias',
-                name: 'alias'
-            },{
-                data: 'description',
-                name: 'description'
             }, {
                 data: 'status',
                 name: 'status',
                 orderable: false,
                 searchable: false
+            }, {
+                data: 'date_of_birth',
+                name: 'date_of_birth'
+            }, {
+                data: 'mobile_no',
+                name: 'mobile_no'
+            }, {
+                data: 'department',
+                name: 'department'
+            }, {
+                data: 'designation',
+                name: 'designation'
+            }, {
+                data: 'joining_date',
+                name: 'joining_date'
             }, {
                 data: 'action',
                 name: 'action',

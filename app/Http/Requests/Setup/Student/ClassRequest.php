@@ -2,16 +2,11 @@
 
 namespace App\Http\Requests\Setup\Student;
 
-use App\Model\Setup\Student\AcademicSession;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class AcademicSessionRequest extends FormRequest {
-	protected $model;
+class ClassRequest extends FormRequest {
 
-	public function __construct(AcademicSession $model) {
-		$this->model = $model;
-	}
 	/**
 	 * Determine if the user is authorized to make this request.
 	 *
@@ -31,17 +26,12 @@ class AcademicSessionRequest extends FormRequest {
 		return [
 			'name' => [
 				'required', 'string', 'max:191',
-				Rule::unique('academic_sessions')->ignore($this->academic_session),
+				Rule::unique('classes')->ignore($this->class),
 			],
 			'description' => [
 				'sometimes', 'nullable', 'string', 'max:500',
 			],
-			'start_date' => [
-				'required', 'date'
-			],
-			'end_date' => [
-				'required', 'date','after:start_date'
-			],
+		
 		];
 	}
 
@@ -52,10 +42,9 @@ class AcademicSessionRequest extends FormRequest {
 	 */
 	public function attributes() {
 		return [
-			'name' => trans('setup.student.academic_session.form.name_label'),
-			'description' => trans('setup.student.academic_session.form.description_label'),
-			'start_date' => trans('setup.student.academic_session.form.start_date_label'),
-			'end_date' => trans('setup.student.academic_session.form.end_date_label'),
+			'name' => trans('setup.student.class.form.name_label'),
+			'description' => trans('setup.student.class.form.description_label'),
+			
 		];
 	}
 

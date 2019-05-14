@@ -1,8 +1,8 @@
 @php
-	$route = 'setup.student.academic-session.';
-	$lang = 'setup.student.academic_session.';
-	$page = 'Academic Session';
-	$js = ['setup/student/academic_session'];
+	$route = 'setup.student.subject.';
+	$lang = 'setup.student.subject.';
+	$page = 'Class';
+	$js = ['setup/student/subject'];
 @endphp
 @extends('layouts.master', ['title' => __($lang.'title'), 'modal' => true])
 @section('page.header')
@@ -23,7 +23,7 @@
 <div class="card">
 	<div class="card-header header-elements-inline">
 		<h5 class="card-title">@lang($lang.'title')
-		@can('create-academic_session')
+		@can('create-class')
 		<button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal_remote" id="content_managment" data-url="{{route($route.'create')}}"><i class="icon-stack-plus mr-2"></i> @lang($lang.'create')</button>
 		@endcan
 		</h5>
@@ -33,15 +33,13 @@
 			</div>
 		</div>
 	</div>
-	@can('view-academic_session')
+	@can('view-class')
 	<div class="card-body">
 		<table class="table content_managment_table" data-url="{{route($route.'datatable')}}">
 			<thead>
 				<tr>
 					<th>@lang($lang.'table.id')</th>
 					<th>@lang($lang.'table.name')</th>
-					<th>@lang($lang.'table.start_date')</th>
-					<th>@lang($lang.'table.end_date')</th>
 
 					<th>@lang($lang.'table.description')</th>
 					<th>@lang($lang.'table.status')</th>

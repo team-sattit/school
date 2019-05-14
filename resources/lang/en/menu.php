@@ -32,6 +32,9 @@ return [
 		'category' => 'Category',
 		'academic_session'=>'Academic Session',
 		'student'=>'Student',
+		'class'=>'Class',
+		'subject'=>'Subject',
+
 	],
 	'employee' => 'Employee',
 	'Student'=>'Student',

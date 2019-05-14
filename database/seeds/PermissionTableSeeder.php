@@ -133,5 +133,17 @@ class PermissionTableSeeder extends Seeder {
 		Permission::create(['guard_name' => 'web', 'name' => 'delete-academic_session']);
 		Permission::create(['guard_name' => 'web', 'name' => 'change-status-academic_session']);
 
+		Permission::create(['guard_name' => 'web', 'name' => 'view-class']);
+		Permission::create(['guard_name' => 'web', 'name' => 'create-class']);
+		Permission::create(['guard_name' => 'web', 'name' => 'update-class']);
+		Permission::create(['guard_name' => 'web', 'name' => 'delete-class']);
+		Permission::create(['guard_name' => 'web', 'name' => 'change-status-class']);
+
+		Permission::create(['guard_name' => 'web', 'name' => 'view-subject']);
+		Permission::create(['guard_name' => 'web', 'name' => 'create-subject']);
+		Permission::create(['guard_name' => 'web', 'name' => 'update-subject']);
+		Permission::create(['guard_name' => 'web', 'name' => 'delete-subject']);
+		Permission::create(['guard_name' => 'web', 'name' => 'change-status-subject']);
+
 	}
 }
