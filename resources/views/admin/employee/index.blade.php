@@ -37,13 +37,14 @@
 		<table class="table content_managment_table" data-url="{{route($route.'datatable')}}">
 			<thead>
 				<tr>
-					<th>@lang($lang.'table.id')</th>
+					<th>@lang($lang.'table.code')</th>
 					<th>@lang($lang.'table.name')</th>
-					<th>@lang($lang.'table.nid')</th>
-					<th>@lang($lang.'table.contact')</th>
-					<th>@lang($lang.'table.info')</th>
-					<th>@lang($lang.'table.description')</th>
 					<th>@lang($lang.'table.status')</th>
+					<th>@lang($lang.'table.date_of_birth')</th>
+					<th>@lang($lang.'table.mobile_no')</th>
+					<th>@lang($lang.'table.department')</th>
+					<th>@lang($lang.'table.designation')</th>
+					<th>@lang($lang.'table.joining_date')</th>
 					<th>@lang($lang.'table.action')</th>
 				</tr>
 			</thead>

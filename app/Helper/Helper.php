@@ -187,3 +187,15 @@ function generateTranslatedSelectOption($data) {
 function trt_sprintf($num, $digit = 3) {
 	return sprintf('%0' . $digit . 'd', $num);
 }
+
+function getEmployeeTerm($employee, $date = null) {
+	$date = ($date) ?: date('Y-m-d');
+
+	return $employee->EmployeeTerms->sortByDesc('date_of_joining')->filter(function ($term) use ($date) {
+		return ($term->date_of_joining <= $date && (!$term->date_of_leaving || $term->date_of_leaving >= $date));
+	})->first();
+}
+
+function isActiveEmployee($employee, $date = null) {
+	return getEmployeeTerm($employee, $date) ? true : false;
+}

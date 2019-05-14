@@ -149,22 +149,6 @@ class EmployeeController extends Controller {
 	}
 
 	/**
-	 * Change Status the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function status($id) {
-		$this->authorize('status', $this->repo->model());
-		if ($this->request->ajax()) {
-			$this->repo->updateStatus($id);
-			return $this->success(['message' => trans($this->lang . 'status_change')]);
-		} else {
-			return abort(404);
-		}
-	}
-
-	/**
 	 * Get field from ajax Request.
 	 *
 	 * @param  int  $field

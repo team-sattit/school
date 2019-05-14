@@ -4,7 +4,12 @@ return [
 	'create' => 'New Employee',
 	'update' => 'Update Employee',
 	'table' => [
-		'id' => '#',
+		'code' => '#',
+		'date_of_birth' => 'DOB',
+		'mobile_no' => 'Mobile',
+		'department' => 'Department',
+		'designation' => 'Designation',
+		'joining_date' => 'Joining',
 		'name' => 'Name',
 		'contact' => 'Contact',
 		'info' => 'Info',

@@ -5,7 +5,7 @@
 		<!-- Main -->
 		<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">@lang('main')</div> <i class="icon-menu" title="@lang('main')"></i></li>
 		<li class="nav-item">
-			<a href="{{route('home')}}" class="nav-link{{ Request::is('home') ? ' active' : '' }}">
+			<a href="{{route('home')}}" class="nav-link{{ Request::is('dashboard') ? ' active' : '' }}">
 				<i class="icon-home4"></i>
 				<span>
 					@lang('menu.dashboard')
@@ -101,7 +101,7 @@
 			  @if(auth()->user()->can('view-subject') or auth()->user()->can('create-subject'))
 				<li class="nav-item"><a href="{{route('setup.student.subject.index')}}" class="nav-link{{ Request::is('setup/student/subject') ? ' active' : '' }}"><i class="icon-stack-plus"></i> <span>@lang('menu.setup.subject')</span></a></li>
 				@endif
-		
+
 			</ul>
 		</li>
 		@endif
@@ -110,7 +110,7 @@
 			<!-- Main -->
 		<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">@lang('main')</div> <i class="icon-menu" title="@lang('main')"></i></li>
 		<li class="nav-item">
-			<a href="{{route('home')}}" class="nav-link{{ Request::is('home') ? ' active' : '' }}">
+			<a href="{{route('home')}}" class="nav-link{{ Request::is('dashboard') ? ' active' : '' }}">
 				<i class="icon-home4"></i>
 				<span>
 					@lang('menu.dashboard')

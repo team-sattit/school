@@ -15,10 +15,12 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::group(['middleware' => ['suspend', 'auth']], function () {
-	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/dashboard', function () {
+		return view('admin.dashboard');
+	})->name('home');
 
 	Route::group(['prefix' => 'setup', 'namespace' => 'Admin\Setup'], function () {
 		/*
@@ -216,7 +218,6 @@ Route::post('/permission/module', 'PermissionController@assignModulePermission')
 		]);
 	});
 	Route::resource('employee', 'Admin\Employee\EmployeeController');
-	Route::put('/employee/{employee}/status', 'Admin\Employee\EmployeeController@status')->name('employee.status');
 	Route::get('datatable/employee', 'Admin\Employee\EmployeeController@datatable')->name('employee.datatable');
 
 	Route::view('setup', 'admin.setup.index')->name('setup');

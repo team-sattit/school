@@ -27,7 +27,7 @@ class LoginController extends Controller {
 	 *
 	 * @var string
 	 */
-	protected $redirectTo = '/admin/dashboard';
+	protected $redirectTo = '/dashboard';
 
 	/**
 	 * Validate the user login request.

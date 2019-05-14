@@ -107,18 +107,32 @@ class EmployeeRepository {
 	public function datatable() {
 		$models = $this->getAll();
 		return Datatables::of($models)
-			->addIndexColumn()->addColumn('type', function ($model) {
-			return $model->type;
-		})->addColumn('name', function ($model) {
+			->addColumn('code', function ($model) {
+				return $model->EmployeeCode;
+			})->addColumn('name', function ($model) {
 			return '<strong>' . $model->name . '</strong> ';
-		})->editColumn('description', function ($model) {
-			return $model->description;
+		})->editColumn('date_of_birth', function ($model) {
+			return $model->date_of_birth->format('M d, Y');
+		})->editColumn('joining_date', function ($model) {
+			return $model->joining_date->format('M d, Y');
+		})->addColumn('department', function ($model) {
+			$designation = getEmployeeDesignation($model);
+			if (!$designation) {
+				return 'No Department';
+			}
+			return $designation->department->name;
+		})->addColumn('designation', function ($model) {
+			$designation = getEmployeeDesignationName($model);
+			if (!$designation) {
+				return 'No Designation';
+			}
+			return $designation;
 		})->addColumn('status', function ($model) {
-			return view('admin.setup.status', compact('model'));
+			return view('admin.employee.status', compact('model'));
 		})->addColumn('action', function ($model) {
-			$route = $this->route;
-			$permission = $this->permission;
-			return view('admin.setup.action', compact('model', 'route', 'permission'));
+			$route = $this->route();
+			$permission = $this->permission();
+			return view('admin.employee.action', compact('model', 'route', 'permission'));
 		})->removeColumn('created_at')->removeColumn('updated_at')
 			->rawColumns(['action', 'status', 'name', 'description'])->make(true);
 	}
