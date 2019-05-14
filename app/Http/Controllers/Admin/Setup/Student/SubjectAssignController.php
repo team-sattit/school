@@ -2,26 +2,25 @@
 
 namespace App\Http\Controllers\Admin\Setup\Student;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\Setup\Student\SubjectRepository;
-use App\Http\Requests\Setup\Student\SubjectRequest;
+use App\Http\Requests\Setup\Student\SubjectAssaignRequest;
+use App\Repositories\Setup\Student\SubjectAssaignRepository;
+use Illuminate\Http\Request;
 
-class SubjectController extends Controller
-{
-  
+class SubjectAssignController extends Controller {
+
 	protected $request;
 	protected $repo;
 	protected $view;
 	protected $lang;
 	public function __construct(
 		Request $request,
-		SubjectRepository $repo
+		SubjectAssaignRepository $repo
 	) {
 		$this->request = $request;
 		$this->repo = $repo;
-		$this->view = 'admin.setup.student.subject.';
-		$this->lang = 'setup.student.subject.';
+		$this->view = 'admin.setup.student.subject_assaign.';
+		$this->lang = 'setup.student.subject_assaign.';
 	}
 	/**
 	 * Display a listing of the resource.
@@ -53,7 +52,7 @@ class SubjectController extends Controller
 	public function create() {
 		$this->authorize('create', $this->repo->model());
 		if ($this->request->ajax()) {
-			return view($this->view . 'form');
+			return view($this->view . 'form', $this->repo->preRequisite());
 		} else {
 			return abort(404);
 		}
@@ -66,7 +65,7 @@ class SubjectController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(SubjectRequest $request) {
+	public function store(SubjectAssaignRequest $request) {
 		$this->authorize('create', $this->repo->model());
 		if ($this->request->ajax()) {
 			$naionality = $this->repo->create($this->request->all());
@@ -97,7 +96,7 @@ class SubjectController extends Controller
 		$this->authorize('update', $this->repo->model());
 		if ($this->request->ajax()) {
 			$model = $this->repo->findOrFail($id);
-			return view($this->view . 'form', compact('model'));
+			return view($this->view . 'form', compact('model'), $this->repo->preRequisite());
 		} else {
 			return abort(404);
 		}
@@ -110,7 +109,7 @@ class SubjectController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(SubjectRequest $request, $id) {
+	public function update(SubjectAssaignRequest $request, $id) {
 		$this->authorize('update', $this->repo->model());
 		if ($this->request->ajax()) {
 			$nationality = $this->repo->findOrFail($id);

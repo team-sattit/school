@@ -34,6 +34,8 @@ return [
 		'student'=>'Student',
 		'class'=>'Class',
 		'subject'=>'Subject',
+		'subject_assaign'=>'Subject Assaign',
+
 
 	],
 	'employee' => 'Employee',

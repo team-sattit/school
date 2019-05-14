@@ -102,6 +102,10 @@
 				<li class="nav-item"><a href="{{route('setup.student.subject.index')}}" class="nav-link{{ Request::is('setup/student/subject') ? ' active' : '' }}"><i class="icon-stack-plus"></i> <span>@lang('menu.setup.subject')</span></a></li>
 				@endif
 
+			 @if(auth()->user()->can('view-subject_assaign') or auth()->user()->can('create-subject_assaign'))
+				<li class="nav-item"><a href="{{route('setup.student.subject_assaign.index')}}" class="nav-link{{ Request::is('setup/student/subject_assaign') ? ' active' : '' }}"><i class="icon-stack-plus"></i> <span>@lang('menu.setup.subject_assaign')</span></a></li>
+				@endif
+
 			</ul>
 		</li>
 		@endif

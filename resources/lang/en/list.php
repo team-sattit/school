@@ -27,4 +27,6 @@ return array(
 	'weekly' => 'Weekly',
 	'widowed' => 'Widowed',
 	'yes' => 'Yes',
+	'compolsary' => 'Compolsary',
+	'optional' => 'Optional',
 );

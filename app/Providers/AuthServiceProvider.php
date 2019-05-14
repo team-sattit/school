@@ -32,6 +32,7 @@ class AuthServiceProvider extends ServiceProvider {
 		'App\Model\Setup\Student\AcademicSession' => 'App\Policies\Setup\Student\AcademicSessionPolicy',
 		'App\Model\Setup\Student\AcademicClass' => 'App\Policies\Setup\Student\ClassPolicy',
 		'App\Model\Setup\Student\Subject' => 'App\Policies\Setup\Student\SubjectPolicy',
+		'App\Model\Setup\Student\SubjectAssaign' => 'App\Policies\Setup\Student\SubjectAssaignPolicy',
 	];
 
 	/**

@@ -14,4 +14,6 @@ return [
 	'caste' => 'Select Caste',
 	'category' => 'Select Category',
 	'role' => 'Select Role',
+	'class' => 'Select Class',
+	'subject' => 'Select Subject',
 ];

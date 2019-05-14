@@ -518,5 +518,33 @@ return [
 			'status_change' => 'Subject Status Changed Successfully',
 			'not_find' => 'Subject Could Not Find',
 		],
+
+			'subject_assaign' => [
+			'title' => 'Subject Assaign Setup',
+			'create' => 'Assaign Subject',
+			'update' => 'Update Assaign Subject',
+			'table' => [
+				'id' => '#',
+				'classname' => 'Class Name',
+				'subjectname' => 'Subject Name',
+				'subjectcategory' => 'Subject category',
+
+				'status' => 'Status',
+				'action' => 'Action',
+			],
+			'form' => [
+				'class_label' => 'Class',
+				'class' => 'Select Class Name',
+				'subject_label' => 'Subject',
+				'subject' => 'Select Subject Name',
+				'category_label' => 'Category',
+				'category' => 'Subject Category',
+			],
+			'added' => 'Subject Assiagn to Class Successfully',
+			'updated' => 'Subject Assiagn to Class Successfully',
+			'deleted' => 'Subject Assiagn to Class Successfully',
+			'status_change' => 'Subject Assiagn to Class Changed Successfully',
+			'not_find' => 'Subject Assiagn to Class Could Not Find',
+		],
 	],
 ];

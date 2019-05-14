@@ -3,6 +3,10 @@
 		"male",
 		"female"
 	],
+	"category": [
+		"compolsary",
+		"optional"
+	],
 	"marital_status": [
 		"single",
 		"married",
